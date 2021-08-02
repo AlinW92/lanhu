@@ -15,9 +15,9 @@
             </ul>
             <ul class="u3">
                 <h3>联系我们</h3>
-                <li><img src="../../assets/img/weibo.png"></li>
-                <li><img src="../../assets/img/wechat.png"></li>
-                <li><img src="../../assets/img/qq.png"></li>
+                <li><a href=""><img src="../../assets/img/weibo.png"></a></li>
+                <li><a href=""><img src="../../assets/img/wechat.png"></a></li>
+                <li><a href=""><img src="../../assets/img/qq.png"></a></li>
             </ul>
         </div>
         <div class="footer__info">
