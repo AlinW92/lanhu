@@ -112,6 +112,7 @@
                   <li><a href="">2021-07-30 AIM1.0.1版</a></li>
                   <li><a href="">2021-07-30 AIM1.0.1版</a></li>
                   <li><a href="">2021-07-30 AIM1.0.1版</a></li>
+
                 </ul>
               </div>
             </a>
@@ -134,16 +135,9 @@ export default {
   components: {
     Footer,
     Header
+  },
+  methods: {
   }
-  // setup () {
-  //   axios
-  //     .get(
-  //       'https://www.fastmock.site/mock/ae8e9031947a302fed5f92425995aa19/jd/api/user/register'
-  //     )
-  //     .then(response => {
-  //       console.log(response)
-  //     })
-  // }
 }
 </script>
 

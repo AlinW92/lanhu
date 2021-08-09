@@ -1,3 +1,4 @@
+/* eslint-disable vue/require-v-for-key */
 <template>
   <div class="header">
     <div class="container">
@@ -26,15 +27,17 @@
             >无论何时何地，你都可以随时查看专属信息<br />不用担心数据泄漏<br />一切尽在掌握</span
           >
           <div class="download__btn ap2">
-            <a href="javascript:void(0)" class="an1"
-              ><img src="../../assets/img/download_ios.png" />
-              <div class="ios_ewm">
-                  <span><img src="../../assets/img/erweima.png"></span>
-              </div>
-            </a>
+            <div>
+                <a class="an1">
+                  <img src="../../assets/img/download_ios.png" />
+                  <div class="ios_ewm">
+                  <span><img src="../../assets/img/erweima.png" /></span>
+                  </div>
+                </a>
+            </div>
             <a href="javascript:void(0)" class="an2"
               ><img src="../../assets/img/download_android.png" />
-              <span class="an_ewm"><img src="../../assets/img/erweima.png"></span>
+              <span class="an_ewm"><img src="../../assets/img/erweima.png" /></span>
             </a>
           </div>
         </div>
@@ -49,8 +52,74 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Header',
+  data: function () {
+    return {
+      tagList: [
+        {
+          id: 1,
+          name: '安卓2.0',
+          list: [
+            {
+              id: '20',
+              name: '安卓2.0',
+              pid: 1,
+              link: 'https://cli.im/',
+              litpic: '/uploads/allimg/20210803/4c8f6ad18656035a40c1a5cd226d759b.png',
+              create_time: '2021-08-03'
+            },
+            {
+              id: '18',
+              name: '安卓1.0',
+              pid: 1,
+              link: '/uploads/file/20210806/phpqrcode-2010100721_1.1.4.zip',
+              litpic: '/uploads/allimg/20210803/4c8f6ad18656035a40c1a5cd226d759b.png',
+              create_time: '2021-08-03'
+            }
+          ]
+        },
+        {
+          id: 2,
+          name: '苹果端',
+          list: [
+            {
+              id: '19',
+              name: '苹果端1.0',
+              pid: 2,
+              link: 'https://cli.im/',
+              litpic: '/uploads/allimg/20210803/4c8f6ad18656035a40c1a5cd226d759b.png',
+              create_time: '2021-08-03'
+            }
+          ]
+        },
+        {
+          id: 3,
+          name: 'PC端',
+          list: [
+            {
+              id: '20',
+              name: 'PC2.0',
+              pid: 3,
+              link: 'https://cli.im/',
+              litpic: '/uploads/allimg/20210803/4c8f6ad18656035a40c1a5cd226d759b.png',
+              create_time: '2021-08-03'
+            },
+            {
+              id: '21',
+              name: 'PC1.0',
+              pid: 3,
+              link: 'https://cli.im/',
+              litpic: '/uploads/allimg/20210803/4c8f6ad18656035a40c1a5cd226d759b.png',
+              create_time: '2021-08-03'
+            }
+          ]
+        }
+      ]
+    }
+  },
   methods: {
     Submit (key) {
     //   debugger
@@ -60,8 +129,17 @@ export default {
         top: PageId.offsetTop,
         behavior: 'smooth'
       })
+    },
+    getData: function () {
+      axios.get('http://119.28.31.14/api/tagList').then(res => {
+        this.tagList = res.data
+      }).catch(err => {
+        console.log(err)
+      })
     }
+
   }
+
 }
 </script>
 
