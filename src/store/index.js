@@ -9,8 +9,6 @@ export default createStore({
   mutations: {
     SET_QR_CODE_URL (state, data) {
       state.qrUrl = data
-      // console.log(111111111111111111111)
-      console.log(data)
     }
   },
   actions: {
